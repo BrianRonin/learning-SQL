@@ -35,6 +35,19 @@ and first_name in ('Luiz', 'Keelie');
 select * from users
 where first_name like '%ma%_';
 
+-- *** Group ***
+-- group consegue agrupar valores iguais
+-- não pode ser diferente as tabelas para agrupar
+-- por exemplo com id daria erro, para ver
+-- a quantidade que é repetido os valores
+-- utilizasse count()
+select first_name, count(id) as total from users u 
+group by first_name 
+order by total desc
+
+-- obs:
+-- group deve ser chamado antes de "order"
+
 -- *** Order ***
 -- ordena valores:
 -- order by id asc (id crescente)
@@ -54,16 +67,6 @@ from users
 where id between 100 and 150
 order by id asc
 limit 9,3;
-
--- *** insert select ***
--- ? insere valores em uma tabela usando outra
-insert into profiles
-(bio, description, user_id)
-select 
-concat('Bio de ', first_name), 
-concat('Description de', ' ', first_name), 
-id 
-from users;
 
 -- * SELECT MULTIPLE TABLES *
 -- Seleciona users.id, profiles.id, profiles.bio

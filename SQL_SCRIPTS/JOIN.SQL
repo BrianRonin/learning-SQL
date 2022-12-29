@@ -1,5 +1,5 @@
--- *** JOIN INNER ***
--- ? No join inner você junta duas partes em uma onde
+-- *** INNER ***
+-- ? No inner você junta duas partes em uma onde
 -- ? as duas partes se tornão obrigatórias
 -- Seleciona users.id, profiles.id, profiles.bio
 -- profiles.description, users.first_name

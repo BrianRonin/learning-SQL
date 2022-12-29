@@ -10,3 +10,13 @@ insert into users
 ("Helena", "A.", "1@email.com", "3_hash"),
 ("Joana", "B.", "2@email.com", "4_hash"),
 ("Rosana", "C.", "3@email.com", "5_hash");
+
+-- *** insert select ***
+-- ? insere valores em uma tabela usando outra
+insert into profiles
+(bio, description, user_id)
+select 
+concat('Bio de ', first_name), 
+concat('Description de', ' ', first_name), 
+id 
+from users;
